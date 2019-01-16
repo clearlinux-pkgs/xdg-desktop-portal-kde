@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : xdg-desktop-portal-kde
-Version  : 5.14.4
-Release  : 9
-URL      : https://download.kde.org/stable/plasma/5.14.4/xdg-desktop-portal-kde-5.14.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.14.4/xdg-desktop-portal-kde-5.14.4.tar.xz
-Source99 : https://download.kde.org/stable/plasma/5.14.4/xdg-desktop-portal-kde-5.14.4.tar.xz.sig
+Version  : 5.14.5
+Release  : 10
+URL      : https://download.kde.org/stable/plasma/5.14.5/xdg-desktop-portal-kde-5.14.5.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.14.5/xdg-desktop-portal-kde-5.14.5.tar.xz
+Source99 : https://download.kde.org/stable/plasma/5.14.5/xdg-desktop-portal-kde-5.14.5.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -18,6 +18,7 @@ Requires: xdg-desktop-portal-kde-license = %{version}-%{release}
 Requires: xdg-desktop-portal-kde-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
+BuildRequires : cups-dev
 BuildRequires : extra-cmake-modules pkgconfig(glib-2.0)
 BuildRequires : kwayland-dev
 BuildRequires : pkg-config
@@ -55,14 +56,14 @@ locales components for the xdg-desktop-portal-kde package.
 
 
 %prep
-%setup -q -n xdg-desktop-portal-kde-5.14.4
+%setup -q -n xdg-desktop-portal-kde-5.14.5
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543402778
+export SOURCE_DATE_EPOCH=1547679870
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -70,7 +71,7 @@ make  %{?_smp_mflags} VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1543402778
+export SOURCE_DATE_EPOCH=1547679870
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
 cp COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/COPYING
