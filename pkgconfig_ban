@@ -1,4 +1,5 @@
 # This file contains pkgconfig build requirements that get picked up
 # but are undesirable. One entry per line, no whitespace.
 libpipewire-0.1
+libpipewire-0.3
 libspa-0.1
