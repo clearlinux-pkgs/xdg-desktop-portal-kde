@@ -6,7 +6,7 @@
 #
 Name     : xdg-desktop-portal-kde
 Version  : 5.15.4
-Release  : 16
+Release  : 17
 URL      : https://download.kde.org/stable/plasma/5.15.4/xdg-desktop-portal-kde-5.15.4.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.15.4/xdg-desktop-portal-kde-5.15.4.tar.xz
 Source99 : https://download.kde.org/stable/plasma/5.15.4/xdg-desktop-portal-kde-5.15.4.tar.xz.sig
@@ -63,7 +63,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1554226097
+export SOURCE_DATE_EPOCH=1555343378
 mkdir -p clr-build
 pushd clr-build
 %cmake ..
@@ -71,7 +71,7 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1554226097
+export SOURCE_DATE_EPOCH=1555343378
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
 cp COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/COPYING
