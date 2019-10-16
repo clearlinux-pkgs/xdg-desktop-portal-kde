@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : xdg-desktop-portal-kde
-Version  : 5.16.5
-Release  : 28
-URL      : https://download.kde.org/stable/plasma/5.16.5/xdg-desktop-portal-kde-5.16.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.16.5/xdg-desktop-portal-kde-5.16.5.tar.xz
-Source1 : https://download.kde.org/stable/plasma/5.16.5/xdg-desktop-portal-kde-5.16.5.tar.xz.sig
+Version  : 5.17.0
+Release  : 29
+URL      : https://download.kde.org/stable/plasma/5.17.0/xdg-desktop-portal-kde-5.17.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.17.0/xdg-desktop-portal-kde-5.17.0.tar.xz
+Source1 : https://download.kde.org/stable/plasma/5.17.0/xdg-desktop-portal-kde-5.17.0.tar.xz.sig
 Summary  : A backend implementation for xdg-desktop-portal using Qt/KF5
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -19,7 +19,6 @@ Requires: xdg-desktop-portal-kde-locales = %{version}-%{release}
 BuildRequires : buildreq-cmake
 BuildRequires : buildreq-kde
 BuildRequires : cups-dev
-BuildRequires : extra-cmake-modules pkgconfig(glib-2.0)
 BuildRequires : kwayland-dev
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(epoxy)
@@ -56,14 +55,14 @@ locales components for the xdg-desktop-portal-kde package.
 
 
 %prep
-%setup -q -n xdg-desktop-portal-kde-5.16.5
+%setup -q -n xdg-desktop-portal-kde-5.17.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1567654072
+export SOURCE_DATE_EPOCH=1571193241
 mkdir -p clr-build
 pushd clr-build
 # -Werror is for werrorists
@@ -76,14 +75,14 @@ export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %cmake ..
-make  %{?_smp_mflags} VERBOSE=1
+make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1567654072
+export SOURCE_DATE_EPOCH=1571193241
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
-cp COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/COPYING
+cp %{_builddir}/xdg-desktop-portal-kde-5.17.0/COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
 pushd clr-build
 %make_install
 popd
@@ -100,7 +99,7 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/xdg-desktop-portal-kde/COPYING
+/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
 
 %files locales -f xdg-desktop-portal-kde.lang
 %defattr(-,root,root,-)
