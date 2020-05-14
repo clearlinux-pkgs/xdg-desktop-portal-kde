@@ -6,7 +6,7 @@
 #
 Name     : xdg-desktop-portal-kde
 Version  : 5.18.5
-Release  : 46
+Release  : 47
 URL      : https://download.kde.org/stable/plasma/5.18.5/xdg-desktop-portal-kde-5.18.5.tar.xz
 Source0  : https://download.kde.org/stable/plasma/5.18.5/xdg-desktop-portal-kde-5.18.5.tar.xz
 Source1  : https://download.kde.org/stable/plasma/5.18.5/xdg-desktop-portal-kde-5.18.5.tar.xz.sig
