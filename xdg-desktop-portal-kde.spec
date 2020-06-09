@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : xdg-desktop-portal-kde
-Version  : 5.18.5
-Release  : 47
-URL      : https://download.kde.org/stable/plasma/5.18.5/xdg-desktop-portal-kde-5.18.5.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.18.5/xdg-desktop-portal-kde-5.18.5.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.18.5/xdg-desktop-portal-kde-5.18.5.tar.xz.sig
+Version  : 5.19.0
+Release  : 48
+URL      : https://download.kde.org/stable/plasma/5.19.0/xdg-desktop-portal-kde-5.19.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.0/xdg-desktop-portal-kde-5.19.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.0/xdg-desktop-portal-kde-5.19.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -23,6 +23,7 @@ BuildRequires : extra-cmake-modules-data
 BuildRequires : ki18n-dev
 BuildRequires : kirigami2-dev
 BuildRequires : kwayland-dev
+BuildRequires : pipewire-dev
 BuildRequires : pkg-config
 BuildRequires : pkgconfig(epoxy)
 BuildRequires : pkgconfig(gbm)
@@ -58,15 +59,15 @@ locales components for the xdg-desktop-portal-kde package.
 
 
 %prep
-%setup -q -n xdg-desktop-portal-kde-5.18.5
-cd %{_builddir}/xdg-desktop-portal-kde-5.18.5
+%setup -q -n xdg-desktop-portal-kde-5.19.0
+cd %{_builddir}/xdg-desktop-portal-kde-5.19.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1588707798
+export SOURCE_DATE_EPOCH=1591741580
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -82,10 +83,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1588707798
+export SOURCE_DATE_EPOCH=1591741580
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
-cp %{_builddir}/xdg-desktop-portal-kde-5.18.5/COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/xdg-desktop-portal-kde-5.19.0/COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
 pushd clr-build
 %make_install
 popd
@@ -99,7 +100,9 @@ popd
 %defattr(-,root,root,-)
 /usr/share/applications/org.freedesktop.impl.portal.desktop.kde.desktop
 /usr/share/dbus-1/services/org.freedesktop.impl.portal.desktop.kde.service
+/usr/share/knotifications5/xdg-desktop-portal-kde.notifyrc
 /usr/share/xdg-desktop-portal-kde/qml/AppChooserDialog.qml
+/usr/share/xdg-desktop-portal-kde/qml/UserInfoDialog.qml
 /usr/share/xdg-desktop-portal/portals/kde.portal
 
 %files license
