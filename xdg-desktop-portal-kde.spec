@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : xdg-desktop-portal-kde
-Version  : 5.19.1
-Release  : 49
-URL      : https://download.kde.org/stable/plasma/5.19.1/xdg-desktop-portal-kde-5.19.1.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.19.1/xdg-desktop-portal-kde-5.19.1.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.19.1/xdg-desktop-portal-kde-5.19.1.tar.xz.sig
+Version  : 5.19.2
+Release  : 50
+URL      : https://download.kde.org/stable/plasma/5.19.2/xdg-desktop-portal-kde-5.19.2.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.19.2/xdg-desktop-portal-kde-5.19.2.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.19.2/xdg-desktop-portal-kde-5.19.2.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : LGPL-2.1
@@ -59,15 +59,15 @@ locales components for the xdg-desktop-portal-kde package.
 
 
 %prep
-%setup -q -n xdg-desktop-portal-kde-5.19.1
-cd %{_builddir}/xdg-desktop-portal-kde-5.19.1
+%setup -q -n xdg-desktop-portal-kde-5.19.2
+cd %{_builddir}/xdg-desktop-portal-kde-5.19.2
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592331959
+export SOURCE_DATE_EPOCH=1592934661
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,10 +83,10 @@ make  %{?_smp_mflags}  VERBOSE=1
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1592331959
+export SOURCE_DATE_EPOCH=1592934661
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
-cp %{_builddir}/xdg-desktop-portal-kde-5.19.1/COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/xdg-desktop-portal-kde-5.19.2/COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
 pushd clr-build
 %make_install
 popd
