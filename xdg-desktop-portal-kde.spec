@@ -5,14 +5,14 @@
 # Source0 file verified with key 0xEC94D18F7F05997E (jr@jriddell.org)
 #
 Name     : xdg-desktop-portal-kde
-Version  : 5.21.4
-Release  : 58
-URL      : https://download.kde.org/stable/plasma/5.21.4/xdg-desktop-portal-kde-5.21.4.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.21.4/xdg-desktop-portal-kde-5.21.4.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.21.4/xdg-desktop-portal-kde-5.21.4.tar.xz.sig
+Version  : 5.22.0
+Release  : 59
+URL      : https://download.kde.org/stable/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.22.0/xdg-desktop-portal-kde-5.22.0.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
-License  : LGPL-2.1
+License  : GPL-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
 Requires: xdg-desktop-portal-kde-data = %{version}-%{release}
 Requires: xdg-desktop-portal-kde-license = %{version}-%{release}
 Requires: xdg-desktop-portal-kde-locales = %{version}-%{release}
@@ -59,15 +59,15 @@ locales components for the xdg-desktop-portal-kde package.
 
 
 %prep
-%setup -q -n xdg-desktop-portal-kde-5.21.4
-cd %{_builddir}/xdg-desktop-portal-kde-5.21.4
+%setup -q -n xdg-desktop-portal-kde-5.22.0
+cd %{_builddir}/xdg-desktop-portal-kde-5.22.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1618706315
+export SOURCE_DATE_EPOCH=1623437150
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -83,10 +83,14 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1618706315
+export SOURCE_DATE_EPOCH=1623437150
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
-cp %{_builddir}/xdg-desktop-portal-kde-5.21.4/COPYING %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
+cp %{_builddir}/xdg-desktop-portal-kde-5.22.0/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/xdg-desktop-portal-kde-5.22.0/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/a4c60b3fefda228cd7439d3565df043192fef137
+cp %{_builddir}/xdg-desktop-portal-kde-5.22.0/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
+cp %{_builddir}/xdg-desktop-portal-kde-5.22.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/xdg-desktop-portal-kde-5.22.0/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
@@ -107,7 +111,10 @@ popd
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/package-licenses/xdg-desktop-portal-kde/01a6b4bf79aca9b556822601186afab86e8c4fbf
+/usr/share/package-licenses/xdg-desktop-portal-kde/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+/usr/share/package-licenses/xdg-desktop-portal-kde/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
+/usr/share/package-licenses/xdg-desktop-portal-kde/a4c60b3fefda228cd7439d3565df043192fef137
+/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
 
 %files locales -f xdg-desktop-portal-kde.lang
 %defattr(-,root,root,-)
