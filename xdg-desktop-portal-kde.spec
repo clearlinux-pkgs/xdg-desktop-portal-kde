@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xD7574483BB57B18D (jr@jriddell.org)
 #
 Name     : xdg-desktop-portal-kde
-Version  : 5.24.3
-Release  : 73
-URL      : https://download.kde.org/stable/plasma/5.24.3/xdg-desktop-portal-kde-5.24.3.tar.xz
-Source0  : https://download.kde.org/stable/plasma/5.24.3/xdg-desktop-portal-kde-5.24.3.tar.xz
-Source1  : https://download.kde.org/stable/plasma/5.24.3/xdg-desktop-portal-kde-5.24.3.tar.xz.sig
+Version  : 5.24.4
+Release  : 74
+URL      : https://download.kde.org/stable/plasma/5.24.4/xdg-desktop-portal-kde-5.24.4.tar.xz
+Source0  : https://download.kde.org/stable/plasma/5.24.4/xdg-desktop-portal-kde-5.24.4.tar.xz
+Source1  : https://download.kde.org/stable/plasma/5.24.4/xdg-desktop-portal-kde-5.24.4.tar.xz.sig
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0 LGPL-2.1 LGPL-3.0
@@ -68,15 +68,15 @@ services components for the xdg-desktop-portal-kde package.
 
 
 %prep
-%setup -q -n xdg-desktop-portal-kde-5.24.3
-cd %{_builddir}/xdg-desktop-portal-kde-5.24.3
+%setup -q -n xdg-desktop-portal-kde-5.24.4
+cd %{_builddir}/xdg-desktop-portal-kde-5.24.4
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1647273517
+export SOURCE_DATE_EPOCH=1648654222
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -92,15 +92,15 @@ make  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1647273517
+export SOURCE_DATE_EPOCH=1648654222
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde
-cp %{_builddir}/xdg-desktop-portal-kde-5.24.3/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/3e8971c6c5f16674958913a94a36b1ea7a00ac46
-cp %{_builddir}/xdg-desktop-portal-kde-5.24.3/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/a4c60b3fefda228cd7439d3565df043192fef137
-cp %{_builddir}/xdg-desktop-portal-kde-5.24.3/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
-cp %{_builddir}/xdg-desktop-portal-kde-5.24.3/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/19d98e1b6f8ef12849ea4012a052d3907f336c91
-cp %{_builddir}/xdg-desktop-portal-kde-5.24.3/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
-cp %{_builddir}/xdg-desktop-portal-kde-5.24.3/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/xdg-desktop-portal-kde-5.24.4/LICENSES/GPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/3e8971c6c5f16674958913a94a36b1ea7a00ac46
+cp %{_builddir}/xdg-desktop-portal-kde-5.24.4/LICENSES/LGPL-2.0-or-later.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/a4c60b3fefda228cd7439d3565df043192fef137
+cp %{_builddir}/xdg-desktop-portal-kde-5.24.4/LICENSES/LGPL-2.1-only.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/81b58c89ceef8e9f8bd5d00a287edbd15f9d3567
+cp %{_builddir}/xdg-desktop-portal-kde-5.24.4/LICENSES/LGPL-3.0-only.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/19d98e1b6f8ef12849ea4012a052d3907f336c91
+cp %{_builddir}/xdg-desktop-portal-kde-5.24.4/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
+cp %{_builddir}/xdg-desktop-portal-kde-5.24.4/LICENSES/LicenseRef-KDE-Accepted-LGPL.txt %{buildroot}/usr/share/package-licenses/xdg-desktop-portal-kde/e458941548e0864907e654fa2e192844ae90fc32
 pushd clr-build
 %make_install
 popd
