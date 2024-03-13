@@ -1,3 +1,6 @@
-5.27.10
+6.0.2
 kglobalaccel-dev
+kirigami-dev
+kstatusnotifieritem-dev
+qt6wayland-dev
 wayland-protocols-dev plasma-wayland-protocols-dev
