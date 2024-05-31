@@ -9,7 +9,7 @@
 #
 Name     : xdg-desktop-portal-kde
 Version  : 6.0.5
-Release  : 98
+Release  : 99
 URL      : https://download.kde.org/stable/plasma/6.0.5/xdg-desktop-portal-kde-6.0.5.tar.xz
 Source0  : https://download.kde.org/stable/plasma/6.0.5/xdg-desktop-portal-kde-6.0.5.tar.xz
 Source1  : https://download.kde.org/stable/plasma/6.0.5/xdg-desktop-portal-kde-6.0.5.tar.xz.sig
