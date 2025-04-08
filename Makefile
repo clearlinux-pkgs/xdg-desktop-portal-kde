@@ -1,5 +1,5 @@
 PKG_NAME := xdg-desktop-portal-kde
-URL = https://download.kde.org/stable/plasma/6.3.3/xdg-desktop-portal-kde-6.3.3.tar.xz
+URL = https://download.kde.org/stable/plasma/6.3.4/xdg-desktop-portal-kde-6.3.4.tar.xz
 ARCHIVES = 
 
 include ../common/Makefile.common
